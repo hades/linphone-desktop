@@ -100,7 +100,7 @@ ColumnLayout {
 		
 		cellHeight: height / 2
 		cellWidth: width / 2
-		enabled: cguCheckBox.checked
+		enabled: true
 		visible: parent.isVisible
 		
 		delegate: Item {
@@ -113,7 +113,7 @@ ColumnLayout {
 					margins: AssistantHomeStyle.buttons.spacing
 				}
 				
-				enabled: cguCheckBox.checked && SettingsModel[$viewType.charAt(0).toLowerCase() + $viewType.slice(1) + "Enabled"]
+				enabled: true && SettingsModel[$viewType.charAt(0).toLowerCase() + $viewType.slice(1) + "Enabled"]
 				text: $text.replace('%1', Qt.application.name.toUpperCase())
 				
 				onClicked:{ assistant.pushView($view, $props) }
